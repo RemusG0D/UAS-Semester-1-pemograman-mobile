@@ -6,10 +6,18 @@ class Buku {
   int id;
   String judul;
   String pengarang;
+  String genre;
   int harga;
   String keterangan;
 
-  Buku(this.id, this.judul, this.pengarang, this.harga, this.keterangan);
+  Buku(
+    this.id,
+    this.judul,
+    this.pengarang,
+    this.genre,
+    this.harga,
+    this.keterangan,
+  );
 
   @override
   String toString() {
@@ -18,6 +26,7 @@ class Buku {
 ID        : $id 
 Judul     : $judul 
 Pengarang : $pengarang
+Genre     : $genre
 Harga     : RP $harga,000
 Keterangan: $keterangan
 
@@ -29,9 +38,10 @@ class TokoBuku {
   List<Buku> daftarBuku = [];
   int idBerikutnya = 1;
 
-  void tambahBuku(
-      String judul, String pengarang, int harga, String keterangan) {
-    daftarBuku.add(Buku(idBerikutnya++, judul, pengarang, harga, keterangan));
+  void tambahBuku(String judul, String pengarang, String genre, int harga,
+      String keterangan) {
+    daftarBuku
+        .add(Buku(idBerikutnya++, judul, pengarang, genre, harga, keterangan));
     print('Buku berhasil ditambahkan.');
   }
 
@@ -49,8 +59,8 @@ class TokoBuku {
     return daftarBuku.firstWhere((buku) => buku.id == id);
   }
 
-  void updateBuku(
-      int id, String judul, String pengarang, int harga, String keterangan) {
+  void updateBuku(int id, String judul, String pengarang, String genre,
+      int harga, String keterangan) {
     Buku bukuAda = cariBukuById(id);
 
     if (bukuAda != null) {
@@ -103,10 +113,12 @@ Tanggal :${DateTime.now()}
         stdout.write('Masukkan pengarang: ');
         String pengarang = stdin.readLineSync().toString();
         stdout.write('Masukkan harga: ');
+        String genre = stdin.readLineSync().toString();
+        stdout.write('Masukkan genre: ');
         int harga = int.parse(stdin.readLineSync().toString());
         stdout.write('Masukkan keterangan: ');
         String keterangan = stdin.readLineSync().toString();
-        tokoBuku.tambahBuku(judul, pengarang, harga, keterangan);
+        tokoBuku.tambahBuku(judul, pengarang, genre, harga, keterangan);
         break;
       case '2':
         tokoBuku.tampilkanBuku();
@@ -119,11 +131,13 @@ Tanggal :${DateTime.now()}
         stdout.write('Masukkan pengarang baru: ');
         String pengarangBaru = stdin.readLineSync().toString();
         stdout.write('Masukkan harga baru: ');
+        String genreBaru = stdin.readLineSync().toString();
+        stdout.write('Masukkan genre baru: ');
         int hargaBaru = int.parse(stdin.readLineSync().toString());
         stdout.write('Masukkan keterangan baru: ');
         String keteranganBaru = stdin.readLineSync().toString();
         tokoBuku.updateBuku(
-            id, judulBaru, pengarangBaru, hargaBaru, keteranganBaru);
+            id, judulBaru, pengarangBaru, genreBaru, hargaBaru, keteranganBaru);
         break;
       case '4':
         stdout.write('Masukkan ID buku yang akan dihapus: ');
