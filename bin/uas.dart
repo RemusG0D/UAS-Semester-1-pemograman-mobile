@@ -111,10 +111,10 @@ Tanggal :${DateTime.now()}
         stdout.write('Masukkan judul: ');
         String judul = stdin.readLineSync().toString();
         stdout.write('Masukkan pengarang: ');
-        String pengarang = stdin.readLineSync().toString();
-        stdout.write('Masukkan harga: ');
         String genre = stdin.readLineSync().toString();
         stdout.write('Masukkan genre: ');
+        String pengarang = stdin.readLineSync().toString();
+        stdout.write('Masukkan harga: ');
         int harga = int.parse(stdin.readLineSync().toString());
         stdout.write('Masukkan keterangan: ');
         String keterangan = stdin.readLineSync().toString();
@@ -130,9 +130,9 @@ Tanggal :${DateTime.now()}
         String judulBaru = stdin.readLineSync().toString();
         stdout.write('Masukkan pengarang baru: ');
         String pengarangBaru = stdin.readLineSync().toString();
-        stdout.write('Masukkan harga baru: ');
-        String genreBaru = stdin.readLineSync().toString();
         stdout.write('Masukkan genre baru: ');
+        String genreBaru = stdin.readLineSync().toString();
+        stdout.write('Masukkan harga baru: ');
         int hargaBaru = int.parse(stdin.readLineSync().toString());
         stdout.write('Masukkan keterangan baru: ');
         String keteranganBaru = stdin.readLineSync().toString();
