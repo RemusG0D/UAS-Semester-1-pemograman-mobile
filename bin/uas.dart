@@ -27,7 +27,7 @@ ID        : $id
 Judul     : $judul 
 Pengarang : $pengarang
 Genre     : $genre
-Harga     : RP $harga,000
+Harga     : RP $harga
 Keterangan: $keterangan
 
 ''';
@@ -111,9 +111,9 @@ Tanggal :${DateTime.now()}
         stdout.write('Masukkan judul: ');
         String judul = stdin.readLineSync().toString();
         stdout.write('Masukkan pengarang: ');
-        String genre = stdin.readLineSync().toString();
-        stdout.write('Masukkan genre: ');
         String pengarang = stdin.readLineSync().toString();
+        stdout.write('Masukkan genre: ');
+        String genre = stdin.readLineSync().toString();
         stdout.write('Masukkan harga: ');
         int harga = int.parse(stdin.readLineSync().toString());
         stdout.write('Masukkan keterangan: ');
